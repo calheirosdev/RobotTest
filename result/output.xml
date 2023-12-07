@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.6 on win32)" generated="20231014 12:11:11.204" rpa="false" schemaversion="4">
+<suite id="s1" name="Ebay Electronics Tests" source="C:\Users\user\Desktop\Automation\RobotFramework\EbayTest\tests\ebay_electronics_tests.robot">
+<test id="s1-t1" name="Searching a Playstation under Video Games &amp; Consoles category of Electronics menu" line="18">
+<kw name="Open Login Page Using Chrome Browser" library="resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${MAIN_PAGE}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231014 12:11:11.385" level="INFO">Opening browser 'Chrome' to base url 'https://ebay.com/'.</msg>
+<status status="PASS" starttime="20231014 12:11:11.385" endtime="20231014 12:11:18.210"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231014 12:11:18.210" endtime="20231014 12:11:18.348"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:11.384" endtime="20231014 12:11:18.348"/>
+</kw>
+<kw name="When user clicks on the sign in link" library="ebay_login_page">
+<kw name="Click On Element" library="abstract_page">
+<arg>${signInLink}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:18.349" endtime="20231014 12:11:18.383"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231014 12:11:18.383" endtime="20231014 12:11:18.683"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:18.684" level="INFO">Clicking element 'xpath://span[@id='gh-ug']/a[.='Sign in']'.</msg>
+<status status="PASS" starttime="20231014 12:11:18.683" endtime="20231014 12:11:21.277"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:18.349" endtime="20231014 12:11:21.277"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:18.348" endtime="20231014 12:11:21.277"/>
+</kw>
+<kw name="Then user would land on the sign in page" library="ebay_login_page">
+<kw name="Verify Element Displayed" library="abstract_page">
+<arg>${signInPage}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:21.279" endtime="20231014 12:11:21.325"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231014 12:11:21.325" endtime="20231014 12:11:21.365"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:21.279" endtime="20231014 12:11:21.365"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:21.278" endtime="20231014 12:11:21.365"/>
+</kw>
+<kw name="When user enters ${email} into user id text field" library="ebay_login_page" sourcename="user enters ${email} into user id text field">
+<kw name="Input Into Element" library="abstract_page">
+<arg>${emailOrUsername}</arg>
+<arg>${email}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:21.367" endtime="20231014 12:11:21.390"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20231014 12:11:21.391" endtime="20231014 12:11:21.438"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<arg>${Text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:21.439" level="INFO">Typing text 'belestibdu@gmail.com' into text field 'id:userid'.</msg>
+<status status="PASS" starttime="20231014 12:11:21.438" endtime="20231014 12:11:21.529"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:21.366" endtime="20231014 12:11:21.529"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:21.366" endtime="20231014 12:11:21.529"/>
+</kw>
+<kw name="And user clicks on the Sign-in Continue button" library="ebay_login_page">
+<kw name="Click On Element" library="abstract_page">
+<arg>${signInContinueBtn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:21.530" endtime="20231014 12:11:21.552"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231014 12:11:21.552" endtime="20231014 12:11:21.853"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:21.854" level="INFO">Clicking element 'id:signin-continue-btn'.</msg>
+<status status="PASS" starttime="20231014 12:11:21.853" endtime="20231014 12:11:21.945"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:21.530" endtime="20231014 12:11:21.945"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:21.530" endtime="20231014 12:11:21.945"/>
+</kw>
+<kw name="And user enters ${password} into the pass text field" library="ebay_login_page" sourcename="user enters ${password} into the pass text field">
+<kw name="Input Into Element" library="abstract_page">
+<arg>${passW}</arg>
+<arg>${password}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:21.947" endtime="20231014 12:11:23.370"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20231014 12:11:23.370" endtime="20231014 12:11:23.412"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<arg>${Text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:23.412" level="INFO">Typing text 'Bel@amaz#4' into text field 'id:pass'.</msg>
+<status status="PASS" starttime="20231014 12:11:23.412" endtime="20231014 12:11:23.507"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:21.947" endtime="20231014 12:11:23.507"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:21.946" endtime="20231014 12:11:23.508"/>
+</kw>
+<kw name="And user clicks on the Sign in button" library="ebay_login_page">
+<kw name="Click On Element" library="abstract_page">
+<arg>${signInButton}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:23.508" endtime="20231014 12:11:23.530"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231014 12:11:23.530" endtime="20231014 12:11:23.827"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:23.827" level="INFO">Clicking element 'id:sgnBt'.</msg>
+<status status="PASS" starttime="20231014 12:11:23.827" endtime="20231014 12:11:23.877"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:23.508" endtime="20231014 12:11:23.877"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:23.508" endtime="20231014 12:11:23.877"/>
+</kw>
+<kw name="Then user would get ${profileName} in the profile menu" library="ebay_login_page" sourcename="user would get ${profileName} in the profile menu">
+<kw name="Verify Element Text" library="abstract_page">
+<arg>${profileNameLocator}</arg>
+<arg>${profileName}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:23.878" endtime="20231014 12:11:27.259"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<arg>${expected_text}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231014 12:11:27.259" level="INFO">Verifying element 'xpath://button[@id='gh-ug']/b[1]' contains exact text 'Bel'.</msg>
+<status status="PASS" starttime="20231014 12:11:27.259" endtime="20231014 12:11:27.325"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:23.878" endtime="20231014 12:11:27.325"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:23.878" endtime="20231014 12:11:27.325"/>
+</kw>
+<kw name="And user clicks on the Electronics menu" library="ebay_electronics_page">
+<kw name="Click On Element" library="abstract_page">
+<arg>${electronicsMenu}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:27.326" endtime="20231014 12:11:27.357"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231014 12:11:27.357" endtime="20231014 12:11:27.642"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:27.644" level="INFO">Clicking element 'xpath://li/a[.='Electronics']'.</msg>
+<status status="PASS" starttime="20231014 12:11:27.643" endtime="20231014 12:11:34.739"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:27.326" endtime="20231014 12:11:34.739"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:27.326" endtime="20231014 12:11:34.739"/>
+</kw>
+<kw name="Then user would land on the Electronics page" library="ebay_electronics_page">
+<kw name="Verify Element Displayed" library="abstract_page">
+<arg>${electronicsLabel}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:34.741" endtime="20231014 12:11:34.773"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231014 12:11:34.774" endtime="20231014 12:11:34.802"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:34.741" endtime="20231014 12:11:34.802"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:34.740" endtime="20231014 12:11:34.802"/>
+</kw>
+<kw name="And user selects ${category} of electronics" library="ebay_electronics_page" sourcename="user selects ${category} of electronics">
+<kw name="Set Variable" library="BuiltIn">
+<var>${categoryBegin}</var>
+<arg>//ul/li/a[.='</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:34.804" level="INFO">${categoryBegin} = //ul/li/a[.='</msg>
+<status status="PASS" starttime="20231014 12:11:34.804" endtime="20231014 12:11:34.804"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${categoryEnd}</var>
+<arg>']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:34.805" level="INFO">${categoryEnd} = ']</msg>
+<status status="PASS" starttime="20231014 12:11:34.804" endtime="20231014 12:11:34.805"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selectedCategory}</var>
+<arg>${categoryBegin}${category}${categoryEnd}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:34.805" level="INFO">${selectedCategory} = //ul/li/a[.='Video Games &amp; Consoles']</msg>
+<status status="PASS" starttime="20231014 12:11:34.805" endtime="20231014 12:11:34.805"/>
+</kw>
+<kw name="Click On Element" library="abstract_page">
+<arg>xpath:${selectedCategory}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:34.806" endtime="20231014 12:11:34.832"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231014 12:11:34.832" endtime="20231014 12:11:35.157"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:35.158" level="INFO">Clicking element 'xpath://ul/li/a[.='Video Games &amp; Consoles']'.</msg>
+<status status="PASS" starttime="20231014 12:11:35.157" endtime="20231014 12:11:37.046"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:34.805" endtime="20231014 12:11:37.047"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:34.803" endtime="20231014 12:11:37.047"/>
+</kw>
+<kw name="Then user would land on the ${category} page" library="ebay_electronics_page" sourcename="user would land on the ${category} page">
+<kw name="Verify Element Displayed" library="abstract_page">
+<arg>${categoryLabel}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:37.048" endtime="20231014 12:11:37.086"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231014 12:11:37.086" endtime="20231014 12:11:37.110"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:37.047" endtime="20231014 12:11:37.110"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:37.047" endtime="20231014 12:11:37.110"/>
+</kw>
+<kw name="And user clicks on the ${index} gaming station category" library="ebay_electronics_page" sourcename="user clicks on the ${index} gaming station category">
+<kw name="Set Variable" library="BuiltIn">
+<var>${gamingStationCategoryBegin}</var>
+<arg>//div[@id='mainContent']/section[</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:37.111" level="INFO">${gamingStationCategoryBegin} = //div[@id='mainContent']/section[</msg>
+<status status="PASS" starttime="20231014 12:11:37.111" endtime="20231014 12:11:37.111"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${gamingStationCategoryEnd}</var>
+<arg>]//a/span[.='Go for it']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:37.111" level="INFO">${gamingStationCategoryEnd} = ]//a/span[.='Go for it']</msg>
+<status status="PASS" starttime="20231014 12:11:37.111" endtime="20231014 12:11:37.111"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selectedGamingStationCategory}</var>
+<arg>${gamingStationCategoryBegin}${index}${gamingStationCategoryEnd}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:37.112" level="INFO">${selectedGamingStationCategory} = //div[@id='mainContent']/section[1]//a/span[.='Go for it']</msg>
+<status status="PASS" starttime="20231014 12:11:37.111" endtime="20231014 12:11:37.112"/>
+</kw>
+<kw name="Click On Element" library="abstract_page">
+<arg>xpath:${selectedGamingStationCategory}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:37.112" endtime="20231014 12:11:37.130"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231014 12:11:37.130" endtime="20231014 12:11:37.516"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:37.518" level="INFO">Clicking element 'xpath://div[@id='mainContent']/section[1]//a/span[.='Go for it']'.</msg>
+<status status="PASS" starttime="20231014 12:11:37.517" endtime="20231014 12:11:40.242"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:37.112" endtime="20231014 12:11:40.242"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:37.111" endtime="20231014 12:11:40.242"/>
+</kw>
+<kw name="And user clicks on the ${index} play station category" library="ebay_electronics_page" sourcename="user clicks on the ${index} play station category">
+<kw name="Set Variable" library="BuiltIn">
+<var>${playStationCategoryBegin}</var>
+<arg>//ul/li[@class='carousel__snap-point'][</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:40.244" level="INFO">${playStationCategoryBegin} = //ul/li[@class='carousel__snap-point'][</msg>
+<status status="PASS" starttime="20231014 12:11:40.244" endtime="20231014 12:11:40.244"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${playStationCategoryEnd}</var>
+<arg>]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:40.244" level="INFO">${playStationCategoryEnd} = ]</msg>
+<status status="PASS" starttime="20231014 12:11:40.244" endtime="20231014 12:11:40.244"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selectedplayStationCategory}</var>
+<arg>${playStationCategoryBegin}${index}${playStationCategoryEnd}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:40.245" level="INFO">${selectedplayStationCategory} = //ul/li[@class='carousel__snap-point'][1]</msg>
+<status status="PASS" starttime="20231014 12:11:40.245" endtime="20231014 12:11:40.245"/>
+</kw>
+<kw name="Click On Element" library="abstract_page">
+<arg>xpath:${selectedplayStationCategory}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:40.245" endtime="20231014 12:11:40.300"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231014 12:11:40.300" endtime="20231014 12:11:40.573"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:40.574" level="INFO">Clicking element 'xpath://ul/li[@class='carousel__snap-point'][1]'.</msg>
+<status status="PASS" starttime="20231014 12:11:40.573" endtime="20231014 12:11:42.651"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:40.245" endtime="20231014 12:11:42.651"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:40.243" endtime="20231014 12:11:42.651"/>
+</kw>
+<kw name="And user selects the ${index} play station" library="ebay_electronics_page" sourcename="user selects the ${index} play station">
+<kw name="Set Variable" library="BuiltIn">
+<var>${selectedPlayStationBegin}</var>
+<arg>//ul/li[@class='s-item s-item--large'][</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:42.653" level="INFO">${selectedPlayStationBegin} = //ul/li[@class='s-item s-item--large'][</msg>
+<status status="PASS" starttime="20231014 12:11:42.652" endtime="20231014 12:11:42.653"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selectedPlayStationEnd}</var>
+<arg>]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:42.653" level="INFO">${selectedPlayStationEnd} = ]</msg>
+<status status="PASS" starttime="20231014 12:11:42.653" endtime="20231014 12:11:42.653"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selectedPlayStation}</var>
+<arg>${selectedPlayStationBegin}${index}${selectedPlayStationEnd}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231014 12:11:42.654" level="INFO">${selectedPlayStation} = //ul/li[@class='s-item s-item--large'][1]</msg>
+<status status="PASS" starttime="20231014 12:11:42.653" endtime="20231014 12:11:42.654"/>
+</kw>
+<kw name="Click On Element" library="abstract_page">
+<arg>xpath:${selectedPlayStation}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:42.654" endtime="20231014 12:11:42.705"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231014 12:11:42.705" endtime="20231014 12:11:42.989"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:42.989" level="INFO">Clicking element 'xpath://ul/li[@class='s-item s-item--large'][1]'.</msg>
+<status status="PASS" starttime="20231014 12:11:42.989" endtime="20231014 12:11:48.301"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:42.654" endtime="20231014 12:11:48.301"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:42.652" endtime="20231014 12:11:48.301"/>
+</kw>
+<kw name="And user sets ${quantity} in the quantity label for the play station" library="ebay_electronics_page" sourcename="user sets ${quantity} in the quantity label for the play station">
+<kw name="Input Into Element" library="abstract_page">
+<arg>${qtyTextBox}</arg>
+<arg>${quantity}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:48.304" endtime="20231014 12:11:48.430"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20231014 12:11:48.430" endtime="20231014 12:11:48.500"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<arg>${Text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:48.501" level="INFO">Typing text '2' into text field 'id:qtyTextBox'.</msg>
+<status status="PASS" starttime="20231014 12:11:48.500" endtime="20231014 12:11:48.696"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:48.303" endtime="20231014 12:11:48.696"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:48.302" endtime="20231014 12:11:48.696"/>
+</kw>
+<kw name="And user clicks on the Add to cart button to add the selected play station" library="ebay_electronics_page">
+<kw name="Click On Element" library="abstract_page">
+<arg>${addToCartButton}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:48.698" endtime="20231014 12:11:48.728"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231014 12:11:48.728" endtime="20231014 12:11:49.017"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231014 12:11:49.017" level="INFO">Clicking element 'xpath://a/span/span[.='Add to cart']'.</msg>
+<status status="PASS" starttime="20231014 12:11:49.017" endtime="20231014 12:11:52.475"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:48.697" endtime="20231014 12:11:52.475"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:48.697" endtime="20231014 12:11:52.475"/>
+</kw>
+<kw name="Then user would get ${quantity} play station items in the cart" library="ebay_electronics_page" sourcename="user would get ${quantity} play station items in the cart">
+<kw name="Verify Element Text" library="abstract_page">
+<arg>${numAddedItemsToCart}</arg>
+<arg>${quantity}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231014 12:11:52.477" endtime="20231014 12:11:52.530"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${By_Locator}</arg>
+<arg>${expected_text}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231014 12:11:52.530" level="INFO">Verifying element 'id:gh-cart-n' contains exact text '2'.</msg>
+<status status="PASS" starttime="20231014 12:11:52.530" endtime="20231014 12:11:52.549"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:52.476" endtime="20231014 12:11:52.549"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:52.476" endtime="20231014 12:11:52.549"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231014 12:11:52.550" endtime="20231014 12:11:54.714"/>
+</kw>
+<status status="PASS" starttime="20231014 12:11:11.383" endtime="20231014 12:11:54.715"/>
+</test>
+<status status="PASS" starttime="20231014 12:11:11.206" endtime="20231014 12:11:54.717"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ebay Electronics Tests">Ebay Electronics Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

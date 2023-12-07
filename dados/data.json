@@ -1,0 +1,45 @@
+{
+  "vehicle_data": {
+    "make": "Audi",
+    "engineperformance": "250",
+    "model": "Moped",
+    "cylindercapacity": "1000",
+    "payload": "500",
+    "totalweight": "500",
+    "dateofmanufacture": "01/01/2021",
+    "numberofseatsmotorcycle": "2",
+    "numberofseats": "2",
+    "fuel": "Gas",
+    "listprice": "20000",
+    "annualmileage": "1000"
+  },
+  "insurant_data": {
+    "first_name": "Thiago",
+    "last_name": "Lima",
+    "birth": "01/01/1997",
+    "gender": "gendermale",
+    "street_address": "Rua Camarao Vermelho",
+    "country": "Brazil",
+    "zip": "07791120",
+    "city": "Sao Paulo",
+    "occupation": "Employee",
+    "hobbies": "speeding"
+  },
+    "product_data": {
+    "start_data": "07/01/2024",
+    "sum": "3000000",
+    "bonus": "Super Bonus",
+    "damage": "Partial Coverage",
+    "optional_product": "LegalDefenseInsurance",
+    "courtesy": "No"
+
+  },
+    "send_quote": {
+    "email": "strikethiago@hotmail.com",
+    "phone": "3000000",
+    "username": "thiagosi",
+    "password": "123456Th",
+    "comments": "test"
+  }
+}
+

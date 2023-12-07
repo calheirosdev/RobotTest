@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20231207 03:42:07.262" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="C:\repo\TestRobotThiago\tests">
+<suite id="s1-s1" name="Automobile  Insurance" source="C:\repo\TestRobotThiago\tests\automobile _insurance.robot">
+<test id="s1-s1-t1" name="Fill out the insurance form and validate the success message" line="9">
+<kw name="Open Main Page Using Chrome Browser" library="resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${MAIN_PAGE}</arg>
+<arg>chrome</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231207 03:42:07.482" level="INFO">Opening browser 'chrome' to base url 'http://sampleapp.tricentis.com/101/app.php'.</msg>
+<status status="PASS" starttime="20231207 03:42:07.482" endtime="20231207 03:42:09.661"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231207 03:42:09.661" endtime="20231207 03:42:09.780"/>
+</kw>
+<status status="PASS" starttime="20231207 03:42:07.482" endtime="20231207 03:42:09.780"/>
+</kw>
+<kw name="When the user fills in the vehicle data" library="automobile_nsurance_page">
+<kw name="Get File" library="OperatingSystem">
+<var>${dados}</var>
+<arg>${JSON_DATA}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20231207 03:42:09.780" level="INFO" html="true">Getting file '&lt;a href="file://C:\repo\TestRobotThiago\dados\data.json"&gt;C:\repo\TestRobotThiago\dados\data.json&lt;/a&gt;'.</msg>
+<msg timestamp="20231207 03:42:09.780" level="INFO">${dados} = {
+  "vehicle_data": {
+    "make": "Audi",
+    "engineperformance": "250",
+    "model": "Moped",
+    "cylindercapacity": "1000",
+    "payload": "500",
+    "totalweight": "500",
+    "dateofmanufacture":...</msg>
+<status status="PASS" starttime="20231207 03:42:09.780" endtime="20231207 03:42:09.780"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${dados_dict}</var>
+<arg>json.loads('''${dados}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231207 03:42:09.780" level="INFO">${dados_dict} = {'vehicle_data': {'make': 'Audi', 'engineperformance': '250', 'model': 'Moped', 'cylindercapacity': '1000', 'payload': '500', 'totalweight': '500', 'dateofmanufacture': '01/01/2021', 'numberofseatsmot...</msg>
+<status status="PASS" starttime="20231207 03:42:09.780" endtime="20231207 03:42:09.780"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=make</arg>
+<arg>${dados_dict['vehicle_data']['make']}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231207 03:42:09.780" level="INFO">Selecting options from selection list 'id=make' by value Audi.</msg>
+<status status="PASS" starttime="20231207 03:42:09.780" endtime="20231207 03:42:09.869"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=dateofmanufacture</arg>
+<arg>${dados_dict['vehicle_data']['dateofmanufacture']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:09.869" level="INFO">Typing text '01/01/2021' into text field 'id=dateofmanufacture'.</msg>
+<status status="PASS" starttime="20231207 03:42:09.869" endtime="20231207 03:42:10.011"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=model</arg>
+<arg>${dados_dict['vehicle_data']['model']}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231207 03:42:10.011" level="INFO">Selecting options from selection list 'id=model' by value Moped.</msg>
+<status status="PASS" starttime="20231207 03:42:10.011" endtime="20231207 03:42:10.072"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=cylindercapacity</arg>
+<arg>${dados_dict['vehicle_data']['cylindercapacity']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:10.072" level="INFO">Typing text '1000' into text field 'id=cylindercapacity'.</msg>
+<status status="PASS" starttime="20231207 03:42:10.072" endtime="20231207 03:42:10.164"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=payload</arg>
+<arg>${dados_dict['vehicle_data']['payload']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:10.164" level="INFO">Typing text '500' into text field 'id=payload'.</msg>
+<status status="PASS" starttime="20231207 03:42:10.164" endtime="20231207 03:42:10.241"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=totalweight</arg>
+<arg>${dados_dict['vehicle_data']['totalweight']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:10.241" level="INFO">Typing text '500' into text field 'id=totalweight'.</msg>
+<status status="PASS" starttime="20231207 03:42:10.241" endtime="20231207 03:42:10.313"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=engineperformance</arg>
+<arg>${dados_dict['vehicle_data']['engineperformance']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:10.313" level="INFO">Typing text '250' into text field 'id=engineperformance'.</msg>
+<status status="PASS" starttime="20231207 03:42:10.313" endtime="20231207 03:42:10.373"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=numberofseats</arg>
+<arg>${dados_dict['vehicle_data']['numberofseats']}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231207 03:42:10.373" level="INFO">Selecting options from selection list 'id=numberofseats' by value 2.</msg>
+<status status="PASS" starttime="20231207 03:42:10.373" endtime="20231207 03:42:10.444"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=numberofseatsmotorcycle</arg>
+<arg>${dados_dict['vehicle_data']['numberofseatsmotorcycle']}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231207 03:42:10.444" level="INFO">Selecting options from selection list 'id=numberofseatsmotorcycle' by value 2.</msg>
+<status status="PASS" starttime="20231207 03:42:10.444" endtime="20231207 03:42:10.509"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=fuel</arg>
+<arg>Gas</arg>
+<arg>${dados_dict['vehicle_data']['fuel']}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231207 03:42:10.509" level="INFO">Selecting options from selection list 'id=fuel' by values Gas, Gas.</msg>
+<status status="PASS" starttime="20231207 03:42:10.509" endtime="20231207 03:42:10.573"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=listprice</arg>
+<arg>20000</arg>
+<arg>${dados_dict['vehicle_data']['listprice']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:10.573" level="INFO">Typing text '20000' into text field 'id=listprice'.</msg>
+<status status="PASS" starttime="20231207 03:42:10.573" endtime="20231207 03:42:10.649"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=annualmileage</arg>
+<arg>10000</arg>
+<arg>${dados_dict['vehicle_data']['annualmileage']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:10.649" level="INFO">Typing text '10000' into text field 'id=annualmileage'.</msg>
+<status status="PASS" starttime="20231207 03:42:10.649" endtime="20231207 03:42:10.724"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=enterinsurantdata</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:10.724" level="INFO">Clicking element 'id=enterinsurantdata'.</msg>
+<status status="PASS" starttime="20231207 03:42:10.724" endtime="20231207 03:42:10.779"/>
+</kw>
+<status status="PASS" starttime="20231207 03:42:09.780" endtime="20231207 03:42:10.779"/>
+</kw>
+<kw name="And fills in the insurant data" library="automobile_nsurance_page">
+<kw name="Get File" library="OperatingSystem">
+<var>${dados}</var>
+<arg>${JSON_DATA}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20231207 03:42:10.780" level="INFO" html="true">Getting file '&lt;a href="file://C:\repo\TestRobotThiago\dados\data.json"&gt;C:\repo\TestRobotThiago\dados\data.json&lt;/a&gt;'.</msg>
+<msg timestamp="20231207 03:42:10.781" level="INFO">${dados} = {
+  "vehicle_data": {
+    "make": "Audi",
+    "engineperformance": "250",
+    "model": "Moped",
+    "cylindercapacity": "1000",
+    "payload": "500",
+    "totalweight": "500",
+    "dateofmanufacture":...</msg>
+<status status="PASS" starttime="20231207 03:42:10.780" endtime="20231207 03:42:10.781"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${dados_dict}</var>
+<arg>json.loads('''${dados}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231207 03:42:10.782" level="INFO">${dados_dict} = {'vehicle_data': {'make': 'Audi', 'engineperformance': '250', 'model': 'Moped', 'cylindercapacity': '1000', 'payload': '500', 'totalweight': '500', 'dateofmanufacture': '01/01/2021', 'numberofseatsmot...</msg>
+<status status="PASS" starttime="20231207 03:42:10.781" endtime="20231207 03:42:10.782"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=firstname</arg>
+<arg>${dados_dict['insurant_data']['first_name']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:10.783" level="INFO">Typing text 'Thiago' into text field 'id=firstname'.</msg>
+<status status="PASS" starttime="20231207 03:42:10.782" endtime="20231207 03:42:10.875"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=lastname</arg>
+<arg>${dados_dict['insurant_data']['last_name']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:10.875" level="INFO">Typing text 'Lima' into text field 'id=lastname'.</msg>
+<status status="PASS" starttime="20231207 03:42:10.875" endtime="20231207 03:42:10.954"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=birthdate</arg>
+<arg>${dados_dict['insurant_data']['birth']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:10.954" level="INFO">Typing text '01/01/1997' into text field 'id=birthdate'.</msg>
+<status status="PASS" starttime="20231207 03:42:10.954" endtime="20231207 03:42:11.059"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.getElementById('${dados_dict['insurant_data']['gender']}').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231207 03:42:11.059" level="INFO">Executing JavaScript:
+document.getElementById('gendermale').click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20231207 03:42:11.059" endtime="20231207 03:42:11.067"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=streetaddress</arg>
+<arg>${dados_dict['insurant_data']['street_address']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:11.068" level="INFO">Typing text 'Rua Camarao Vermelho' into text field 'id=streetaddress'.</msg>
+<status status="PASS" starttime="20231207 03:42:11.067" endtime="20231207 03:42:11.167"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=country</arg>
+<arg>${dados_dict['insurant_data']['country']}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231207 03:42:11.168" level="INFO">Selecting options from selection list 'id=country' by value Brazil.</msg>
+<status status="PASS" starttime="20231207 03:42:11.167" endtime="20231207 03:42:11.228"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=zipcode</arg>
+<arg>${dados_dict['insurant_data']['zip']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:11.229" level="INFO">Typing text '07791120' into text field 'id=zipcode'.</msg>
+<status status="PASS" starttime="20231207 03:42:11.228" endtime="20231207 03:42:11.316"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=city</arg>
+<arg>${dados_dict['insurant_data']['city']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:11.317" level="INFO">Typing text 'Sao Paulo' into text field 'id=city'.</msg>
+<status status="PASS" starttime="20231207 03:42:11.316" endtime="20231207 03:42:11.384"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=occupation</arg>
+<arg>${dados_dict['insurant_data']['occupation']}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231207 03:42:11.385" level="INFO">Selecting options from selection list 'id=occupation' by value Employee.</msg>
+<status status="PASS" starttime="20231207 03:42:11.384" endtime="20231207 03:42:11.441"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.getElementById('${dados_dict['insurant_data']['hobbies']}').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231207 03:42:11.443" level="INFO">Executing JavaScript:
+document.getElementById('speeding').click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20231207 03:42:11.441" endtime="20231207 03:42:11.451"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=nextenterproductdata</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:11.452" level="INFO">Clicking element 'id=nextenterproductdata'.</msg>
+<status status="PASS" starttime="20231207 03:42:11.451" endtime="20231207 03:42:11.505"/>
+</kw>
+<status status="PASS" starttime="20231207 03:42:10.780" endtime="20231207 03:42:11.505"/>
+</kw>
+<kw name="And fills in the product data" library="automobile_nsurance_page">
+<kw name="Get File" library="OperatingSystem">
+<var>${dados}</var>
+<arg>${JSON_DATA}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20231207 03:42:11.506" level="INFO" html="true">Getting file '&lt;a href="file://C:\repo\TestRobotThiago\dados\data.json"&gt;C:\repo\TestRobotThiago\dados\data.json&lt;/a&gt;'.</msg>
+<msg timestamp="20231207 03:42:11.506" level="INFO">${dados} = {
+  "vehicle_data": {
+    "make": "Audi",
+    "engineperformance": "250",
+    "model": "Moped",
+    "cylindercapacity": "1000",
+    "payload": "500",
+    "totalweight": "500",
+    "dateofmanufacture":...</msg>
+<status status="PASS" starttime="20231207 03:42:11.506" endtime="20231207 03:42:11.506"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${dados_dict}</var>
+<arg>json.loads('''${dados}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231207 03:42:11.507" level="INFO">${dados_dict} = {'vehicle_data': {'make': 'Audi', 'engineperformance': '250', 'model': 'Moped', 'cylindercapacity': '1000', 'payload': '500', 'totalweight': '500', 'dateofmanufacture': '01/01/2021', 'numberofseatsmot...</msg>
+<status status="PASS" starttime="20231207 03:42:11.506" endtime="20231207 03:42:11.507"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=startdate</arg>
+<arg>${dados_dict['product_data']['start_data']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:11.508" level="INFO">Typing text '07/01/2024' into text field 'id=startdate'.</msg>
+<status status="PASS" starttime="20231207 03:42:11.507" endtime="20231207 03:42:11.606"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=insurancesum</arg>
+<arg>${dados_dict['product_data']['sum']}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231207 03:42:11.610" level="INFO">Selecting options from selection list 'id=insurancesum' by value 3000000.</msg>
+<status status="PASS" starttime="20231207 03:42:11.606" endtime="20231207 03:42:11.662"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=meritrating</arg>
+<arg>${dados_dict['product_data']['bonus']}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231207 03:42:11.662" level="INFO">Selecting options from selection list 'id=meritrating' by value Super Bonus.</msg>
+<status status="PASS" starttime="20231207 03:42:11.662" endtime="20231207 03:42:11.734"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=damageinsurance</arg>
+<arg>${dados_dict['product_data']['damage']}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231207 03:42:11.735" level="INFO">Selecting options from selection list 'id=damageinsurance' by value Partial Coverage.</msg>
+<status status="PASS" starttime="20231207 03:42:11.734" endtime="20231207 03:42:11.789"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.getElementById('${dados_dict['product_data']['optional_product']}').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231207 03:42:11.789" level="INFO">Executing JavaScript:
+document.getElementById('LegalDefenseInsurance').click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20231207 03:42:11.789" endtime="20231207 03:42:11.797"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=courtesycar</arg>
+<arg>${dados_dict['product_data']['courtesy']}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231207 03:42:11.798" level="INFO">Selecting options from selection list 'id=courtesycar' by value No.</msg>
+<status status="PASS" starttime="20231207 03:42:11.797" endtime="20231207 03:42:11.853"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=nextselectpriceoption</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:11.853" level="INFO">Clicking element 'id=nextselectpriceoption'.</msg>
+<status status="PASS" starttime="20231207 03:42:11.853" endtime="20231207 03:42:11.910"/>
+</kw>
+<status status="PASS" starttime="20231207 03:42:11.505" endtime="20231207 03:42:11.910"/>
+</kw>
+<kw name="And the user choose a price option" library="automobile_nsurance_page">
+<kw name="Get File" library="OperatingSystem">
+<var>${dados}</var>
+<arg>${JSON_DATA}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20231207 03:42:11.911" level="INFO" html="true">Getting file '&lt;a href="file://C:\repo\TestRobotThiago\dados\data.json"&gt;C:\repo\TestRobotThiago\dados\data.json&lt;/a&gt;'.</msg>
+<msg timestamp="20231207 03:42:11.911" level="INFO">${dados} = {
+  "vehicle_data": {
+    "make": "Audi",
+    "engineperformance": "250",
+    "model": "Moped",
+    "cylindercapacity": "1000",
+    "payload": "500",
+    "totalweight": "500",
+    "dateofmanufacture":...</msg>
+<status status="PASS" starttime="20231207 03:42:11.911" endtime="20231207 03:42:11.911"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${dados_dict}</var>
+<arg>json.loads('''${dados}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231207 03:42:11.912" level="INFO">${dados_dict} = {'vehicle_data': {'make': 'Audi', 'engineperformance': '250', 'model': 'Moped', 'cylindercapacity': '1000', 'payload': '500', 'totalweight': '500', 'dateofmanufacture': '01/01/2021', 'numberofseatsmot...</msg>
+<status status="PASS" starttime="20231207 03:42:11.911" endtime="20231207 03:42:11.912"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//span[@id='selectsilver_price']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231207 03:42:11.912" endtime="20231207 03:42:11.935"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${silver_price}</var>
+<arg>xpath=//span[@id='selectsilver_price']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:11.951" level="INFO">${silver_price} = 205.00</msg>
+<status status="PASS" starttime="20231207 03:42:11.935" endtime="20231207 03:42:11.951"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${gold_price}</var>
+<arg>xpath=//span[@id='selectgold_price']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:11.966" level="INFO">${gold_price} = 606.00</msg>
+<status status="PASS" starttime="20231207 03:42:11.951" endtime="20231207 03:42:11.966"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${platinum_price}</var>
+<arg>xpath=//span[@id='selectplatinum_price']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:11.982" level="INFO">${platinum_price} = 1,189.00</msg>
+<status status="PASS" starttime="20231207 03:42:11.966" endtime="20231207 03:42:11.982"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${ultimate_price}</var>
+<arg>xpath=//span[@id='selectultimate_price']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:11.997" level="INFO">${ultimate_price} = 2,266.00</msg>
+<status status="PASS" starttime="20231207 03:42:11.983" endtime="20231207 03:42:11.997"/>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<arg>Silver Price: ${silver_price}</arg>
+<arg>GOLD Price: ${gold_price}</arg>
+<arg>Platinum Price: ${platinum_price}</arg>
+<arg>Ultimate Price: ${ultimate_price}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20231207 03:42:11.997" level="INFO">Silver Price: 205.00</msg>
+<msg timestamp="20231207 03:42:11.997" level="INFO">GOLD Price: 606.00</msg>
+<msg timestamp="20231207 03:42:11.997" level="INFO">Platinum Price: 1,189.00</msg>
+<msg timestamp="20231207 03:42:11.997" level="INFO">Ultimate Price: 2,266.00</msg>
+<status status="PASS" starttime="20231207 03:42:11.997" endtime="20231207 03:42:11.997"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.getElementById('selectgold').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231207 03:42:11.998" level="INFO">Executing JavaScript:
+document.getElementById('selectgold').click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20231207 03:42:11.998" endtime="20231207 03:42:12.007"/>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<arg>GOLD Price ${gold_price} was chosen by user</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20231207 03:42:12.007" level="INFO">GOLD Price 606.00 was chosen by user</msg>
+<status status="PASS" starttime="20231207 03:42:12.007" endtime="20231207 03:42:12.007"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=nextsendquote</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231207 03:42:12.007" endtime="20231207 03:42:12.461"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=nextsendquote</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:12.461" level="INFO">Clicking element 'id=nextsendquote'.</msg>
+<status status="PASS" starttime="20231207 03:42:12.461" endtime="20231207 03:42:12.499"/>
+</kw>
+<status status="PASS" starttime="20231207 03:42:11.911" endtime="20231207 03:42:12.499"/>
+</kw>
+<kw name="And fills in the insurant data and send a quote" library="automobile_nsurance_page">
+<kw name="Get File" library="OperatingSystem">
+<var>${dados}</var>
+<arg>${JSON_DATA}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20231207 03:42:12.500" level="INFO" html="true">Getting file '&lt;a href="file://C:\repo\TestRobotThiago\dados\data.json"&gt;C:\repo\TestRobotThiago\dados\data.json&lt;/a&gt;'.</msg>
+<msg timestamp="20231207 03:42:12.500" level="INFO">${dados} = {
+  "vehicle_data": {
+    "make": "Audi",
+    "engineperformance": "250",
+    "model": "Moped",
+    "cylindercapacity": "1000",
+    "payload": "500",
+    "totalweight": "500",
+    "dateofmanufacture":...</msg>
+<status status="PASS" starttime="20231207 03:42:12.500" endtime="20231207 03:42:12.500"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${dados_dict}</var>
+<arg>json.loads('''${dados}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231207 03:42:12.501" level="INFO">${dados_dict} = {'vehicle_data': {'make': 'Audi', 'engineperformance': '250', 'model': 'Moped', 'cylindercapacity': '1000', 'payload': '500', 'totalweight': '500', 'dateofmanufacture': '01/01/2021', 'numberofseatsmot...</msg>
+<status status="PASS" starttime="20231207 03:42:12.500" endtime="20231207 03:42:12.501"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>id=email</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20231207 03:42:12.501" endtime="20231207 03:42:12.511"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>${dados_dict['send_quote']['email']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:12.512" level="INFO">Typing text 'strikethiago@hotmail.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20231207 03:42:12.512" endtime="20231207 03:42:12.644"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>${dados_dict['send_quote']['username']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:12.644" level="INFO">Typing text 'thiagosi' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20231207 03:42:12.644" endtime="20231207 03:42:12.731"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${dados_dict['send_quote']['password']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:12.731" level="INFO">Typing text '123456Th' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20231207 03:42:12.731" endtime="20231207 03:42:12.812"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=confirmpassword</arg>
+<arg>${dados_dict['send_quote']['password']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:12.812" level="INFO">Typing text '123456Th' into text field 'id=confirmpassword'.</msg>
+<status status="PASS" starttime="20231207 03:42:12.812" endtime="20231207 03:42:12.892"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=Comments</arg>
+<arg>${dados_dict['send_quote']['comments']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:12.892" level="INFO">Typing text 'test' into text field 'id=Comments'.</msg>
+<status status="PASS" starttime="20231207 03:42:12.892" endtime="20231207 03:42:12.940"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=sendemail</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231207 03:42:12.940" level="INFO">Clicking element 'id=sendemail'.</msg>
+<status status="PASS" starttime="20231207 03:42:12.940" endtime="20231207 03:42:12.991"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>15s</arg>
+<arg>1s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//h2[contains(text(),'Sending e-mail success!')]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(),'Sending e-mail success!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231207 03:42:13.206" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231207 03:42:13.206" level="FAIL">Page should have contained element 'xpath=//h2[contains(text(),'Sending e-mail success!')]' but did not.</msg>
+<status status="FAIL" starttime="20231207 03:42:12.991" endtime="20231207 03:42:13.206"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(),'Sending e-mail success!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231207 03:42:14.427" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231207 03:42:14.427" level="FAIL">Page should have contained element 'xpath=//h2[contains(text(),'Sending e-mail success!')]' but did not.</msg>
+<status status="FAIL" starttime="20231207 03:42:14.207" endtime="20231207 03:42:14.427"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(),'Sending e-mail success!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231207 03:42:15.644" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231207 03:42:15.644" level="FAIL">Page should have contained element 'xpath=//h2[contains(text(),'Sending e-mail success!')]' but did not.</msg>
+<status status="FAIL" starttime="20231207 03:42:15.428" endtime="20231207 03:42:15.644"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(),'Sending e-mail success!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231207 03:42:16.844" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231207 03:42:16.844" level="FAIL">Page should have contained element 'xpath=//h2[contains(text(),'Sending e-mail success!')]' but did not.</msg>
+<status status="FAIL" starttime="20231207 03:42:16.645" endtime="20231207 03:42:16.844"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(),'Sending e-mail success!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231207 03:42:18.076" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231207 03:42:18.076" level="FAIL">Page should have contained element 'xpath=//h2[contains(text(),'Sending e-mail success!')]' but did not.</msg>
+<status status="FAIL" starttime="20231207 03:42:17.845" endtime="20231207 03:42:18.076"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(),'Sending e-mail success!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231207 03:42:19.318" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231207 03:42:19.318" level="FAIL">Page should have contained element 'xpath=//h2[contains(text(),'Sending e-mail success!')]' but did not.</msg>
+<status status="FAIL" starttime="20231207 03:42:19.077" endtime="20231207 03:42:19.318"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(),'Sending e-mail success!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231207 03:42:20.512" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231207 03:42:20.512" level="FAIL">Page should have contained element 'xpath=//h2[contains(text(),'Sending e-mail success!')]' but did not.</msg>
+<status status="FAIL" starttime="20231207 03:42:20.318" endtime="20231207 03:42:20.512"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(),'Sending e-mail success!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231207 03:42:21.512" level="INFO">Current page contains element 'xpath=//h2[contains(text(),'Sending e-mail success!')]'.</msg>
+<status status="PASS" starttime="20231207 03:42:21.512" endtime="20231207 03:42:21.512"/>
+</kw>
+<status status="PASS" starttime="20231207 03:42:12.991" endtime="20231207 03:42:21.512"/>
+</kw>
+<status status="PASS" starttime="20231207 03:42:12.500" endtime="20231207 03:42:21.512"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231207 03:42:21.512" endtime="20231207 03:42:23.695"/>
+</kw>
+<status status="PASS" starttime="20231207 03:42:07.482" endtime="20231207 03:42:23.695"/>
+</test>
+<status status="PASS" starttime="20231207 03:42:07.278" endtime="20231207 03:42:23.695"/>
+</suite>
+<status status="PASS" starttime="20231207 03:42:07.262" endtime="20231207 03:42:23.695"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Automobile  Insurance">Tests.Automobile  Insurance</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
