@@ -1,6 +1,6 @@
 *** Settings ***
 Resource          ../resources.robot
-Resource          ../pages/automobile_nsurance_page.robot
+Resource          ../pages/automobile_insurance_page.robot
 
 Test Setup        Open Main Page Using Chrome Browser
 Test Teardown     Close Browser

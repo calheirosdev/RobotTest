@@ -36,6 +36,7 @@ O Projeto consiste na feature automobile_insurance
  O Cenário criado é deacordo com os passos do teste.
 
 Para rodar use o comando "robot -d results tests"
+Adicionei o video TestVideo da execução.
 
 # Report
 A pasta results contém o  report.html que mostra os resultados das ultimas execuções.
